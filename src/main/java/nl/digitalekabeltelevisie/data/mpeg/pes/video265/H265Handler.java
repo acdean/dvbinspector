@@ -165,7 +165,7 @@ public class H265Handler extends H26xHandler<Video265PESDataField, H265NALUnit> 
 	 */
 	public DefaultMutableTreeNode getJTreeNode(final int modus) {
 		final DefaultMutableTreeNode s=new DefaultMutableTreeNode(new KVP("H.265 PES Data",this));
-		addListJTree(s,pesPackets,modus | DVBtree.COUNT_LIST_ITEMS_MODUS,"PES Packets");
+		addListJTree(s,pesPackets,modus,"PES Packets");
 		addCCDataToTree(modus, s);
 
 		return s;

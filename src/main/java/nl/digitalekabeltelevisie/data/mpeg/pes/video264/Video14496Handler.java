@@ -40,7 +40,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import nl.digitalekabeltelevisie.controller.*;
 import nl.digitalekabeltelevisie.data.mpeg.PesPacketData;
 import nl.digitalekabeltelevisie.data.mpeg.pes.video26x.*;
-import nl.digitalekabeltelevisie.gui.DVBtree;
 import nl.digitalekabeltelevisie.gui.ImageSource;
 
 import org.jfree.chart.JFreeChart;
@@ -145,7 +144,7 @@ public class Video14496Handler extends H26xHandler<Video14496PESDataField, NALUn
 
 	public DefaultMutableTreeNode getJTreeNode(final int modus) {
 		final DefaultMutableTreeNode s=new DefaultMutableTreeNode(new KVP("H.264 PES Data",this));
-		addListJTree(s,pesPackets,modus | DVBtree.COUNT_LIST_ITEMS_MODUS,"PES Packets");
+		addListJTree(s,pesPackets,modus,"PES Packets");
 		addCCDataToTree(modus, s);
 		
 		return s;
