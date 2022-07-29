@@ -55,8 +55,14 @@ public class Sei_messageFactory {
 			int nextPayloadType = bitSource.nextBits(8);
 			try {
 			switch (nextPayloadType) {
+				case 0x1:
+					sei_message = new PicTimingSei_message(bitSource);
+					break;
 				case 0x4:
 					sei_message = new UserDataRegisteredItuT35Sei_message(bitSource);
+					break;
+				case 0x88:
+					sei_message = new TimeCodeSei_message(bitSource);
 					break;
 				case 0x89:
 					sei_message = new MasteringDisplayColourVolumeSei_message(bitSource);
