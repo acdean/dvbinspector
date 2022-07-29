@@ -46,16 +46,17 @@ public class Video14496PESDataField extends H26xPESDataField<NALUnit> implements
 
 	private static final Logger	logger	= Logger.getLogger(Video14496PESDataField.class.getName());
 
+	private final String suffix;
 
 	public Video14496PESDataField(final PesPacketData pesPacket) {
 		super(pesPacket);
-
+		suffix = " (" + pesPacket.getStartPacketNo() + ")";
 	}
 
 
 
 	public DefaultMutableTreeNode getJTreeNode(final int modus) {
-		final DefaultMutableTreeNode s = super.getJTreeNode(modus,new KVP("Video 14496 PES Packet"));
+		final DefaultMutableTreeNode s = super.getJTreeNode(modus,new KVP("Video 14496 PES Packet" + suffix));
 		addListJTree(s,nalUnits,modus,"NAL Units");
 		return s;
 

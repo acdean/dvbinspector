@@ -42,15 +42,14 @@ import nl.digitalekabeltelevisie.data.mpeg.pes.video26x.H26xPESDataField;
 
 public class Video265PESDataField extends H26xPESDataField<H265NALUnit> implements TreeNode {
 
+	String suffix;
 	public Video265PESDataField(final PesPacketData pesPacket) {
 		super(pesPacket);
-
+		suffix = " (" + pesPacket.getStartPacketNo() + ")";
 	}
 
-
-
 	public DefaultMutableTreeNode getJTreeNode(final int modus) {
-		final DefaultMutableTreeNode s = super.getJTreeNode(modus,new KVP("Video H.265 PES Packet"));
+		final DefaultMutableTreeNode s = super.getJTreeNode(modus,new KVP("Video H.265 PES Packet" + suffix));
 		addListJTree(s,nalUnits,modus,"NAL Units");
 		return s;
 
