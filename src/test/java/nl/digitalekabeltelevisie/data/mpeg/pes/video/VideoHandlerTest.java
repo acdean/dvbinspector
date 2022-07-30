@@ -64,7 +64,7 @@ public class VideoHandlerTest extends PesHandlerSetup{
 
 		final Video138182Handler video138182Handler = (Video138182Handler) pidHandler;
 		
-		validatePreviewImageSize(video138182Handler.getJTreeNode(0),640, 2098, "video bar chart");
+		validatePreviewImageSize(video138182Handler.getJTreeNode(0),640, 2116, "video bar chart");
 
 		final List<PesPacketData> pesPackets = video138182Handler.getPesPackets();
 		assertNotNull("pesPackets = null",pesPackets);

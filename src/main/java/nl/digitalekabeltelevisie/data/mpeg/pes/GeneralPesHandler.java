@@ -136,6 +136,17 @@ public class GeneralPesHandler extends GeneralPidHandler{
 		if(pesData.isComplete()){
 			pesData.processPayload();
 			processPesDataBytes(pesData);
+			logger.info("complete: " + pesData.getStartPacketNo());
+			pesData = null;
+		}
+	}
+
+	// finish off the last pes data
+	@Override
+	public void postProcess() {
+		if (pesData != null) {
+			pesData.processPayload();
+			processPesDataBytes(pesData);
 			pesData = null;
 		}
 	}

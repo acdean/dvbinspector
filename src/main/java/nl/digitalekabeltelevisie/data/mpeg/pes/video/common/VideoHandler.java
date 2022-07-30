@@ -52,6 +52,7 @@ public abstract class VideoHandler extends GeneralPesHandler {
 	
 	@Override
 	public void postProcess() {
+		super.postProcess();
 		// collect sei_messages UserDataRegisteredItuT35Sei_message GA94 cc data Line 21  
 		collectCEA708Data();
 		cea608.handleXDSData();

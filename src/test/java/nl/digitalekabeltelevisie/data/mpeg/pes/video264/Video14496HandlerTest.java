@@ -67,7 +67,7 @@ public class Video14496HandlerTest extends PesHandlerSetup{
 
 		final List<PesPacketData> pesPackets = video14496Handler.getPesPackets();
 		assertNotNull("pesPackets = null",pesPackets);
-		assertEquals("Number of PESPackets", 115, pesPackets.size());
+		assertEquals("Number of PESPackets", 116, pesPackets.size());
 
 		testFrame0(pesPackets.get(0));
 		testFrame2(pesPackets.get(2));
@@ -95,7 +95,7 @@ public class Video14496HandlerTest extends PesHandlerSetup{
 
 		final List<PesPacketData> pesPackets = video14496Handler.getPesPackets();
 		assertNotNull("pesPackets = null",pesPackets);
-		assertEquals("Number of PESPackets", 110, pesPackets.size());
+		assertEquals("Number of PESPackets", 111, pesPackets.size());
 	}
 
 	/**

@@ -60,7 +60,7 @@ public class EBUHandlerTest extends PesHandlerSetup{
 
 		final List<PesPacketData> pesPackets = ebuTeletextHandler.getPesPackets();
 		assertNotNull("pesPackets = null",pesPackets);
-		assertEquals("Number of PESPackets", 223, pesPackets.size());
+		assertEquals("Number of PESPackets", 224, pesPackets.size());
 		
 		TxtService txtService = ebuTeletextHandler.getTxtService();
 		assertNotNull(txtService);
