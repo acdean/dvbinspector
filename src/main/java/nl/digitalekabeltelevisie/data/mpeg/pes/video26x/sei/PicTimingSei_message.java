@@ -39,7 +39,6 @@ public class PicTimingSei_message extends Sei_message {
 		// bitSource has been read by super(), so now convert payload back into BitSource
 		var bitSourcePayload = new BitSource(payload, 0);
 
-		System.out.println("Payload: " + payload.length);
 		if (payload.length == 1) {
 			// the test has a malformed pic_timing sei_message
 			logger.warning("Short pic_timing. Assuming seconds.");
@@ -61,13 +60,9 @@ public class PicTimingSei_message extends Sei_message {
 			discontinuityFlag = bitSourcePayload.f(1);
 			cntDroppedFlag = bitSourcePayload.f(1);
 			frames = bitSourcePayload.u(8);
-			System.out.println("frames: " + frames);
 			seconds = bitSourcePayload.u(6);
-			System.out.println("seconds: " + seconds);
 			minutes = bitSourcePayload.u(6);
-			System.out.println("minutes: " + minutes);
 			hours = bitSourcePayload.u(5);
-			System.out.println("hours: " + hours);
 		}
 	}
 
